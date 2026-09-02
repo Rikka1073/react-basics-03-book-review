@@ -11,14 +11,17 @@ function App() {
 
   const onSubmit = (data) => console.log(data);
 
-  console.log(watch("example"));
+  console.log(watch("Email"));
+  console.log(watch("UserId"));
+
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("UserId")} />
+        <input {...register("UserId", { required: true })} />
+        {errors.UserId && <span>ユーザーIDは必須です</span>}
 
         <input {...register("Email", { required: true })} />
-        {errors.Email && <span>This field is required</span>}
+        {errors.Email && <span>メールアドレスは必須です</span>}
 
         <input type="submit" />
       </form>
