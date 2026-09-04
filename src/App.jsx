@@ -16,6 +16,7 @@ function App() {
 
   return (
     <>
+      <h2>ユーザーログイン</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register("UserId", { required: true })} />
         {errors.UserId && <span>ユーザーIDは必須です</span>}
